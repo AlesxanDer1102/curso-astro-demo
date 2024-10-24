@@ -1,6 +1,4 @@
-const getLaunchBy = async ({
-  id
-}) => {
+const getLaunchBy = async ({ id }) => {
   const res = await fetch(`https://api.spacexdata.com/v5/launches/${id}`);
   const launch = await res.json();
   return launch;
@@ -21,9 +19,7 @@ const getLatestLaunches = async () => {
       }
     })
   });
-  const {
-    docs: launches
-  } = await res.json();
+  const { docs: launches } = await res.json();
   return launches;
 };
 

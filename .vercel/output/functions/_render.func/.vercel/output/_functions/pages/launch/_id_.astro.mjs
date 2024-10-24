@@ -1,12 +1,11 @@
 /* empty css                                    */
 import { c as createComponent, r as renderTemplate, a as renderComponent, b as createAstro, m as maybeRenderHead, d as addAttribute } from '../../chunks/astro/server_DvB1WwkK.mjs';
 import 'kleur/colors';
-import { g as getLaunchBy } from '../../chunks/spacex_CMBpMwnx.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_Dy8KgFkT.mjs';
+import { g as getLaunchBy } from '../../chunks/spacex_C2PZxN3M.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_Dv7h_tJ1.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro();
-const prerender = false;
 const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$id;
@@ -26,7 +25,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$id,
   file: $$file,
-  prerender,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
