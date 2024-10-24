@@ -13,7 +13,12 @@ const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const { id } = Astro2.params;
   let launch;
   if (id) {
-    launch = await getLaunchBy({ id });
+    try {
+      launch = await getLaunchBy({ id });
+    } catch (error) {
+      console.error("Error fetching launch data:", error);
+      launch = null;
+    }
   }
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": `Lanzamiento ${id}` }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<article class="flex gap-y-4 flex-col"> <img class="w-52 h-auto"${addAttribute(launch?.links.patch.small, "src")}${addAttribute(launch?.name, "alt")}> <h2 class="text-4xl text-white font-bold">
 Launch #${launch?.flight_number} </h2> <p class="text-lg"> ${launch?.details} </p> </article> ` })}`;

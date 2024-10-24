@@ -8,7 +8,12 @@ const { id } = Astro.params;
 let launch;
 
 if (id) {
-  launch = await getLaunchBy({ id });
+  try {
+    launch = await getLaunchBy({ id });
+  } catch (error) {
+    console.error("Error fetching launch data:", error);
+    launch = null;
+  }
 }
 ---
 
